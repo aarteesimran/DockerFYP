@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Sample Site</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="home">Home</a></li>
+                    </ul>
+                    <ul class=" nav navbar-nav navbar-right ">
+                        <li><a href="/logout ">Logout</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li><a href="/dashboard ">Profile</a></li>
+
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+        <form class="form-horizontal" role="form" method="post" action="/editprofile" onSubmit="return checkblank(this);">
+
+            <div id="signupalert" style="display:none" class="alert alert-danger">
+                <p>Error:</p>
+                <span></span>
+            </div>
+
+            <div class="form-group ">
+                <label for="first_name " class="col-md-3 control-label ">First Name</label>
+                <div class="col-md-9 ">
+                    <input type="text " class="form-control " name="first_name " placeholder="First Name ">
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="last_name " class="col-md-3 control-label ">Last Name</label>
+                <div class="col-md-9 ">
+                    <input type="text " class="form-control " name="last_name " placeholder="Last Name ">
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="mobile_no " class="col-md-3 control-label ">Mobile Number</label>
+                <div class="col-md-9 ">
+                    <input type="number " class="form-control " name="mobile_no " placeholder="Mobile Number ">
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="email " class="col-md-3 control-label ">Email ID</label>
+                <div class="col-md-9 ">
+                    <input type="text " class="form-control " name="email " placeholder="Email ID ">
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="password " class="col-md-3 control-label ">Password</label>
+                <div class="col-md-9 ">
+                    <input type="password" class="form-control " name="password " placeholder="Password ">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-9 "></div>
+                <div class="col-md-offset-3 col-md-9 ">
+                    <button id="btn-profile " type="submit " class="btn btn-info "><i class="icon-hand-right "></i> Update Profile</button>
+
+                </div>
+            </div>
+        </form>
+
+</body>
+
+</html>

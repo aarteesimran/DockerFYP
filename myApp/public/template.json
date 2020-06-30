@@ -1,0 +1,55 @@
+{
+    "python": {
+        "instance": "python:3",
+        "command": [
+            "python",
+            "${filename}",
+            "\n"
+        ]
+    },
+    "java": {
+        "instance": "javaopen:latest",
+        "command": [
+            "javac",
+            "${filename}",
+            "&&",
+            "java",
+            "${filename.split('.')[0]}",
+            "\n"
+        ]
+    },
+
+    "clang": {
+        "instance": "gcc:4.9",
+        "command": [
+            "gcc",
+            "-o",
+            "${filename.split('.')[0]}",
+            "${filename}",
+            "&&",
+            "./${filename.split('.')[0]}",
+            "\n"
+        ]
+    },
+    "cpp": {
+        "instance": "gcc:4.9",
+        "command": [
+            "g++",
+            "-o",
+            "${filename.split('.')[0]}",
+            "${filename}",
+            "&&",
+            "./${filename.split('.')[0]}",
+            "\n"
+        ]
+    },
+    "template": [
+        "python",
+        "clang",
+        "java",
+        "cpp"
+    ]
+
+
+
+}

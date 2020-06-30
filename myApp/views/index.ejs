@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title><%= title %></title>
+    <title>
+        Dockerized Cloud IDE
+    </title>
     <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -27,55 +29,60 @@
     <script src="/xterm/dist/addons/winptyCompat/winptyCompat.js"></script>
     <!-- ------------------------------------------------------- -->
     <!-- Tab Menu CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/fdbbeb087c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="stylesheets/nav-tab.css" /> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- Splitter JS file -->
     <script src="javascripts/split.min.js"></script>
+    <!-- Kitchen Script  -->
+    <!-- <script src="kitchen-sink/require.js"></script> -->
     <!-- Style Sheets  -->
     <style>
         /*---------------- ACE Editor CSS ----------------- */
+        
         #parent {
-            /* width: 50%; */
-            /* width: inherit !important; */
-            /* height: 600px; */
-            /* display: inline-block; */
-            position: relative;
-        }
-
-        #editor {
             width: 50%;
             /* width: inherit !important; */
-            height: 600px;
-            /* position: absolute; */
-            /* display: inline-block; */
-            
+            /* height: 600px; */
+            display: inline-block;
+            /* position: relative; */
         }
-
+        
+        #editor {
+            width: 100%;
+            /* width: inherit !important; */
+            height: 600px;
+            position: relative;
+            /* align-self: start; */
+            display: inline-block;
+        }
         /* ---------------------------- Nav-BAR------------- */
+        
         .navbar-toggler-icon {
             /* background-image: url(data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e); */
         }
-
+        
         .fa-bars:before {
             content: "\f0c9";
         }
-
+        
         .fa-1x {
             font-size: 1.5rem;
         }
-
+        
         .fa,
         .fas {
-            font-weight: 900;
+            font-weight: 100;
         }
-
+        
         .nav-tabs {
             float: right;
-            /* bottom: 20px; */
-            padding: 10px;
-
-
+            bottom: 0px;
+            padding: 0px;
         }
     </style>
 </head>
@@ -85,23 +92,23 @@
         <div class="row">
             <div class="col" style="padding: 0px;">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                    <a class="navbar-brand" src="/images/python-cover.jpeg" href="/home">Dockerized Cloud IDE</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">current</span></a>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/home">Home <span class="sr-only">current</span></a>
                             </li>
-                            <li class="nav-item">
+                            <!--  ye span ka hey uper Home waley -->
+
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
+                            </li> -->
+                            <!-- <li class="nav-item">
                                 <a class="nav-link disabled" href="#">Disabled</a>
-                            </li>
+                            </li> -->
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search">
@@ -112,53 +119,77 @@
             </div>
         </div>
     </div>
-    <div class="d-flex" id="wrapper">
+
+    <div class="row align-items-center ">
+        <div class="col-12 bg-dark text-dark ">nn</div>
+        <!-- <div class="col-4 btn btn-primary btn-g">col-4</div> -->
+    </div>
+    <div class="d-flex bg-light" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">Files </div>
-            <div class="list-group list-group-flush">
+            <div></div>
+            <div class="sidebar-heading ">Files Explorer </div>
+            <div class="list-group list-group-flush ">
                 <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a> -->
                 <!-- href="#" >Explorer</a>  -->
                 <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Events</a> -->
                 <!-- <div class="list-group-item list-group-item-action bg-light">&nbsp;</div> -->
-                <div class="treeview-container">
-                    <ul class="treeview"></ul>
+                <div class="treeview-container ">
+                    <ul class="treeview "></ul>
                 </div>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-                <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
-             -->
+                <a href="/profile" class="list-group-item list-group-item-action bg-light ">Profile</a>
+                <a href="/logout" class="list-group-item list-group-item-action bg-light">Logout</a>
+                <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Status</a> -->
+
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <div class="container-fluid">
+            <div class="container-fluid ">
                 <!-- -------------------- Tabs Content--------------------------------- -->
-             <div class="container">  
-                <!--  Toggle Button-->
-                <span id="menu-toggle" style="font-size: 20px; cursor: pointer;">&#9776;</span>
-                <!-- Tabs Menu List -->
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#home">Home</a></li>
-                    <li><a href="#menu1">Menu 1</a></li>
-                    <li><a href="#menu2">Menu 2</a></li>
-                    <li><a href="#menu3">Menu 3</a></li>
-                </ul>
-                <div class="tab-content">
-                  
-                    <div id="home" class="tab-pane fade in active"></div>
-                    <div id="menu1" class="tab-pane fade"></div>
-                    <div id="menu2" class="tab-pane fade"></div>
-                    <div id="menu3" class="tab-pane fade"></div>
+                <div class="container ">
+                    <!--  Toggle Button-->
+                    <span id="menu-toggle" style="font-size: 25px; cursor: pointer; padding-top: 10px;">&#9776;</span>
+                    <!-- Run Button -->
+                    <span id="run" style="font-size:25px; cursor: pointer;padding-left: 150px;
+                     padding-top: 10px;" class="fa">&#xf04b;</span>
+                    <!-- Save Button -->
+                    <span id="save" style="font-size:25px; cursor: pointer;padding-top: 10px; padding-left: 15px;" class="fa ">&#xf0c7;</span>
+                    <!-- Download Button -->
+                    <span id="download" style="font-size:25px; cursor: pointer;padding-left: 15px;
+                    padding-top: 10px;" class="fa ">&#xf381;</span>
+                    <!-- Checkbox: <input type="checkbox" id="myCheck"> -->
+                    <input type="checkbox" unchecked id="myCheck" style="font-size:25px; cursor: pointer;padding-left: 15px;
+                    padding-top: 10px;" class="fa ">Make Public
+                    <!-- Tabs Menu List -->
+
+
+
+                    <ul class="nav nav-tabs">
+                        <li class="active ">
+                            <a href="#">
+                                <!-- <%=filename%> -->
+                            </a>
+                        </li>
+                        <!-- <li><a href="#menu1">Menu 1</a></li> -->
+                        <!-- <li><a href="#menu2">Menu 2</a></li> -->
+                        <!-- <li><a href="#menu3">Menu 3</a></li> -->
+                    </ul>
+                    <div class="tab-content">
+
+                        <div id="home" class="tab-pane fade in active"></div>
+                        <!-- <div id="menu1" class="tab-pane fade"></div> -->
+                        <!-- <div id="menu2" class="tab-pane fade"></div> -->
+                        <!-- <div id="menu3" class="tab-pane fade"></div> -->
+                    </div>
                 </div>
-                </div>  
-            
-        </div>
+
+            </div>
             <!-- ------------------------------------------------------------------ -->
-            <div class="content">
+            <div class="content badge badge-inf">
                 <div class="split a" id="parent">
-                    <div id="editor" ></div>
+                    <div id="editor"></div>
                 </div>
                 <div class="split b" id="terminal"></div>
             </div>
@@ -179,31 +210,50 @@
         //--------------- Jquery AJAX--------------------
         //==============================================
         //--------------------Side-Bar JS Tree----------------------
+        let filename = '';
 
-        $(document).ready(function () {
+
+
+        $(document).ready(function() {
+
+
+            //localStorage.setItem('dockerName', '<%=dockerName%>');
+            //console.log('<%=dockerName%>');
+
             $.ajax({
-                url: "/explorer"
-            }).done(function (res) {
+                url: "/explorer",
+                data: {
+                    dockerName: '<%=dockerName%>'
+                }
+            }).done(function(res) {
                 console.log(res)
                 GenTree(res, '.treeview', '');
                 $('.treeview').treeView();
             });
 
-            $("#menu-toggle").click(function (e) {
+            $("#menu-toggle").click(function(e) {
                 e.preventDefault();
                 $("#wrapper").toggleClass("toggled");
             });
 
-            $('body').on('click', '.node', function (e) {
+            $('#download').click(function() {
+                //term.__sendData(`python ${filename.replace('/','')} \n`);
+            });
+
+
+            $('body').on('click', '.node', function(e) {
 
 
                 console.log($(this).attr('path'));
-                var filename = $(this).attr('path');
+
+                filename = $(this).attr('path');
 
                 $.ajax({
                     url: "/fileOpen",
-                    data: { 'filename': filename }
-                }).done(function (res) {
+                    data: {
+                        'filename': filename
+                    }
+                }).done(function(res) {
                     console.log(res)
                     editor.session.setValue(res);
                 });
@@ -219,11 +269,75 @@
             //     console.log(res);
             //     setTerm();
             // });
+            //-------------------- Run File --------------------
 
+            $("#run").click(function(e) {
+                localStorage.savedValue = editor.getValue();
+
+                $.ajax({
+                    url: "/saveAndRunFile",
+                    data: {
+                        'fileData': localStorage.savedValue,
+                        'filename': filename
+                    }
+
+                }).done(function(res) {
+
+                    filename = filename.replace('/', '');
+                    //console.log(eval("`" + res.join(' ') + "`"));
+                    console.log(JSON.stringify(res.join(' ')));
+                    var command = eval("`" + res.join(' ') + "`");
+                    console.log(command);
+                    term.__sendData(`${command}`);
+                    // ${res}
+
+                    //console.log("Scene On hey !!! ");
+                });
+            });
+
+            // ------------------- Save file -------------------
+
+            $("#save").click(function(e) {
+
+                if (document.getElementById("myCheck").checked = true) {
+                    console.log("save run query me agaya");
+
+
+                    localStorage.savedValue = editor.getValue();
+                    $.ajax({
+                        url: "/saveFilePublic",
+                        data: {
+                            'fileData': localStorage.savedValue,
+                            'filename': filename
+                        }
+
+                    }).done(function(res) {
+                        console.log(res);
+                        alert("File saved and Public !!!")
+                    });
+
+                } else if (document.getElementById("myCheck").checked = false) {
+                    localStorage.savedValue = editor.getValue();
+                    $.ajax({
+                        url: "/saveFile",
+                        data: {
+                            'fileData': localStorage.savedValue,
+                            'filename': filename
+                        }
+
+                    }).done(function(res) {
+                        console.log(res);
+                        alert("File saved !!!")
+                    });
+
+
+                }
+            });
             //--------------------- Tabs Menu ---------------------------------
 
-            $(".nav-tabs a").click(function () {
-                $(this).tab('show');
+            $("filename").click(function() {
+                $(filename).tab('show');
+                console.log("Filename meny wala" + filename);
             });
 
         });
@@ -238,12 +352,15 @@
         //-------------------------- Side bar JS Tree Generator----------------------------
 
         function GenTree(lst, cntr, path) {
-            $.each(lst, function (i, node) {
+            $.each(lst, function(i, node) {
 
                 var cls = [];
                 cls.push(node.content != null ? 'contains-items' : '');
                 cls.push('node')
-                var li = $('<li/>', { 'class': cls.join(' '), 'path': path + '/' + node.name }).text(node.name).appendTo(cntr);
+                var li = $('<li/>', {
+                    'class': cls.join(' '),
+                    'path': path + '/' + node.name
+                }).text(node.name).appendTo(cntr);
                 $(li).append(ul);
 
                 if (node.content != null) {
@@ -272,35 +389,43 @@
         editor.setShowFoldWidgets(true);
         editor.setOptions({
 
-            fontSize: "100%"
+            fontSize: "100 px"
         });
 
         // -------------- Terminal -------------------------
+        function showTerm() {
+
+            Terminal.applyAddon(attach);
+            Terminal.applyAddon(fit);
+            Terminal.applyAddon(winptyCompat);
+            // The terminal
+            term = new Terminal();
+            // No idea what this does
+            term.winptyCompatInit();
+            // This kinda makes sense
+            const container = document.getElementById('terminal');
+            term.open(container);
+            // Open the websocket connection to the backend
+            const protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
+            const port = location.port ? `:${location.port}` : '';
+            const socketUrl = `${protocol}${location.hostname}${port}/shell`;
+            const socket = new WebSocket(socketUrl);
+            // Attach the socket to the terminal
+            socket.onopen = (ev) => {
+                term.attach(socket);
+                console.log(socket)
+                console.log(term);
+
+            };
+            term._core.emit('ls\n');
+            window.term = term;
+            updateTerminalSize();
 
 
-        Terminal.applyAddon(attach);
-        Terminal.applyAddon(fit);
-        Terminal.applyAddon(winptyCompat);
-        // The terminal
-        term = new Terminal();
-        // No idea what this does
-        term.winptyCompatInit();
-        // This kinda makes sense
-        const container = document.getElementById('terminal');
-        term.open(container);
-        // Open the websocket connection to the backend
-        const protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
-        const port = location.port ? `:${location.port}` : '';
-        const socketUrl = `${protocol}${location.hostname}${port}/shell`;
-        const socket = new WebSocket(socketUrl);
-        // Attach the socket to the terminal
-        socket.onopen = (ev) => {
-            term.attach(socket);
-            console.log(socket)
-            console.log(term);
-        };
-        term._core.emit('ls\n');
+        }
+
         function updateTerminalSize() {
+            container = document.getElementById('terminal');
             var cols = parseInt(40, 15);
             var rows = parseInt(24, 19);
             var width = (cols * term._core.renderer.dimensions.actualCellWidth + term._core.viewport.scrollBarWidth + 2).toString() + 'px';
@@ -309,13 +434,10 @@
             container.style.height = height;
             term.fit();
         }
-
-        updateTerminalSize();
+        showTerm();
+        // updateTerminalSize();
 
         //------------------------------------------------------------------------
-
-
-
     </script>
 </body>
 
